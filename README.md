@@ -6,7 +6,7 @@ Comprehensive DMR analysis based on bimodal normal distribution model and cost f
 Installation
 ---------
 ```R
-install.packages( c("data.table", "mixtools" )
+install.packages( c("data.table", "mixtools" ))
 source("http://bioconductor.org/biocLite.R")
 biocLite(c("GenomicRanges","IRanges"))
 # install from github
