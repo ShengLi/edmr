@@ -1,0 +1,17 @@
+citHeader("To cite edmr:")
+
+citEntry(entry="article",  
+   author="Sheng Li, Francine E. Garrett-Bakelman, Altuna Akalin, Paul Zumbo, Ross Levine, Bik L To, Ian D Lewis, Anna L Brown, Richard J D'Andrea, Ari Melnick and Christopher E Mason",
+   title="An optimized algorithm for detecting and annotating regional differential methylation",
+   journal="BMC Bioinformatics",
+   year="2013",
+   volume="14",
+   Suppl="5",
+   S="10",
+   textVersion = paste("Sheng Li, Francine E. Garrett-Bakelman, Altuna Akalin, Paul Zumbo, Ross Levine, Bik L To, Ian D Lewis, Anna L Brown, Richard J D'Andrea, Ari Melnick and Christopher E Mason.",
+    "An optimized algorithm for detecting and annotating regional differential methylation",
+    "BMC Bioinformatics 2013, 14(Suppl 5):S10."))
+
+citFooter("Thanks very much for using edmr!,",
+          "we appreciate if you remember to cite it in your paper : ).")
+

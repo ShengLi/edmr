@@ -1,0 +1,41 @@
+Package: edmr
+Type: Package
+Title: Empirical differentially methylated regions calculation
+Description: Comprehensive DMR analysis based on bimodal normal distribution 
+  model and weighted cost function for regional methylation analysis optimization. 
+  It captures the regional methylation modification by taking the spatial 
+  distribution of CpGs into account for the enrichment DNA methylation sequencing 
+  data so as to optimize the definition of the empirical regions. Combined with 
+  the dependent adjustment for regional p-value combination and DMR annotation. 
+Version: 0.6.1
+Authors@R: c(person("Sheng", "Li", role=c("aut","cre"), 
+                    email = "shelly1436@gmail.com"))
+Author: Sheng Li
+Maintainer: Sheng Li <shelly1436@gmail.com>
+Depends: R (>= 3.0.2)
+Imports:
+  GenomicRanges,
+  methylKit,
+  data.table,
+  mixtools
+Suggests:
+  GenomicRanges,
+  methylKit,
+  data.table,
+  mixtools
+License: MIT
+LazyData: true
+Collate:
+  'ACF.R'
+  'edmr.R'
+  'eDMR.sub.R'
+  'get.dist.cutoff.R'
+  'getDMR.R'
+  'getPeaks.R'
+  'helpers.R'
+  'myDiff.to.mixmdl.R'
+  'myDiffToDMR.R'
+  'plotCost.R'
+  'plotMdl1.R'
+  'filter.dmr.R'
+  'annotation.R'
