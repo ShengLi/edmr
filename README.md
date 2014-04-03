@@ -63,4 +63,5 @@ plot.dmr.distr(mysigdmr, cpgi, main="eDMR CpG islands and shores annotation", xl
 
 # prepare genes for pathway analysis with significant DMRs at its promoter regions 
 dmr.genes=get.dmr.genes(myDMR=mysigdmr, subject=genebody$promoter, id.type="gene.symbol")
+dmr.genes
 ```
