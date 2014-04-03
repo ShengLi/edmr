@@ -31,7 +31,7 @@ library(data.table)
 data(example.myDiff.2013Nov6)
 ```
 
-evalution and plot
+Evalution and plot
 ```R
 # fitting the bimodal normal distribution to CpGs distribution
 myMixmdl=myDiff.to.mixmdl(chr22.myDiff)
@@ -43,7 +43,7 @@ plotMdl1(myMixmdl, subtitle="example", cex.sub=1.2)
 plotCost(myMixmdl, main="cost function")
 ```
 
-calculate DMRs
+Calculate DMRs
 ```R
 # calculate all DMRs candidate
 mydmr=edmr(chr22.myDiff, mode=1, ACF=TRUE)
