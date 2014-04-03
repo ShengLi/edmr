@@ -33,7 +33,7 @@ cpgi.anno=function(file, shore.width=2000, shelf.width=2000){
   dn.shelves.gr=flank(dn.shores.gr, width=shelf.width, start=F,both=F)
   shores=reduce(sort(c(up.shores.gr, dn.shores.gr)))
   shelves=reduce(sort(c(up.shores.gr, dn.shelves.gr)))
-  return(list(cpgis=cpgi.gr, shores=setdiff(shores, cpgi.gr), shelves=setdiff(shelves, c(shores, cpgi.gr))))
+  return(list(cpgis=cpgi.gr, shores=GenomicRanges::setdiff(shores, cpgi.gr), shelves=GenomicRanges::setdiff(shelves, c(shores, cpgi.gr))))
 }
 
 
