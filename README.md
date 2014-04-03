@@ -3,6 +3,10 @@ edmr
 
 Comprehensive DMR analysis based on bimodal normal distribution model and cost function for regional methylation analysis.
 
+Citing edmr
+---------
+Li S, Garrett-Bakelman FE, Akalin A, Zumbo P, Levine R, To BL, Lewis ID, Brown AL, D'Andrea RJ, Melnick A, Mason CE. An optimized algorithm for detecting and annotating regional differential methylation. BMC Bioinformatics. 2013;14 Suppl 5:S10.
+
 Installation
 ---------
 ```R
@@ -15,12 +19,9 @@ install_github("methylKit", username = "al2na",build_vignettes=FALSE)
 install_github("edmr", username = "ShengLi",build_vignettes=FALSE)
 ```
 
-Citing edmr
----------
-Li S, Garrett-Bakelman FE, Akalin A, Zumbo P, Levine R, To BL, Lewis ID, Brown AL, D'Andrea RJ, Melnick A, Mason CE. An optimized algorithm for detecting and annotating regional differential methylation. BMC Bioinformatics. 2013;14 Suppl 5:S10.
-
 Usage
 ---------
+Load add-on packages and example data
 ```R
 library(edmr)
 library(methylKit)
@@ -28,9 +29,10 @@ library(GenomicRanges)
 library(mixtools)
 library(data.table)
 data(example.myDiff.2013Nov6)
+```
 
-## evalution and plot
-
+evalution and plot
+```R
 # fitting the bimodal normal distribution to CpGs distribution
 myMixmdl=myDiff.to.mixmdl(chr22.myDiff)
 
@@ -39,9 +41,10 @@ plotMdl1(myMixmdl, subtitle="example", cex.sub=1.2)
 
 # plot cost function and the determined distance cutoff
 plotCost(myMixmdl, main="cost function")
+```
 
-## calculate DMRs
-
+calculate DMRs
+```R
 # calculate all DMRs candidate
 mydmr=edmr(chr22.myDiff, mode=1, ACF=TRUE)
 
