@@ -5,7 +5,7 @@
 #' genebody=genebody.anno(file="http://edmr.googlecode.com/files/hg19_refseq_all_types.bed")
 genebody.anno=function(file){
   print(paste("load", file))
-  genes.obj=fast.read(file,header=F, sep="\t")
+  genes.obj=readTableFast(file,header=F, sep="\t")
   colnames(genes.obj)=c("chr","start","end","id","score","strand","gene.id","gene.symbol")
   subj <- with(genes.obj, GRanges(chr, IRanges(start, end), id=id, gene.symbol=gene.symbol,gene.id=gene.id))
   types=unique(splitn(genes.obj$id,"_",3))
