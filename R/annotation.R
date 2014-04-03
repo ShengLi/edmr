@@ -10,7 +10,7 @@ genebody.anno=function(file){
   subj <- with(genes.obj, GRanges(chr, IRanges(start, end), id=id, gene.symbol=gene.symbol,gene.id=gene.id))
   types=unique(splitn(genes.obj$id,"_",3))
   types=c("up|utr5","utr5","cds","intron","utr3")
-  subj.types=lapply(i = types, function(i){
+  subj.types=lapply(types, function(i){
     print(paste("process:",i))
     with(genes.obj[grep(i, splitn(genes.obj$id,"_",3)),], GRanges(chr, IRanges(start, end), id=id, gene.symbol=gene.symbol,gene.id=gene.id))
   })
