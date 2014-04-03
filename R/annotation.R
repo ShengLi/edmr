@@ -42,6 +42,11 @@ cpgi.anno=function(file, shore.width=2000, shelf.width=2000){
 #' @param myDMR DMRs predicted by \code{edmr}.
 #' @param GRanges list used to annotate DMRs.
 plot.dmr.distr=function(myDMR, subject, ...){
+  # countOverlapDMRs
+  countOverlapDMRs=function(dmr,anno){
+    x=findOverlaps(dmr,anno)
+    unique(x@queryHits)
+  }
   col.list=c("#E41A1C","#377EB8","#984EA3","#4DAF4A","#FF7F00","#FFFF33", "#A65628", "#8DD3C7"  )
   #int=lapply(subject, function(x)intersect(myDMR,x))
   int=lapply(subject, function(x)countOverlapDMRs(myDMR,x))
