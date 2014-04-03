@@ -22,6 +22,7 @@ Li S, Garrett-Bakelman FE, Akalin A, Zumbo P, Levine R, To BL, Lewis ID, Brown A
 Usage
 ---------
 ```R
+library(edmr)
 library(methylKit)
 library(GenomicRanges)
 library(mixtools)
