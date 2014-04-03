@@ -53,14 +53,14 @@ mysigdmr=filter.dmr(mydmr)
 genebody=genebody.anno(file="http://edmr.googlecode.com/files/hg19_refseq_all_types.bed")
 
 # plot the eDMR genebody annotation
-plot.dmr.distr(myDMR.sig, genebody, main="eDMR genebody annotation", xlab="DMR count")
+plot.dmr.distr(mysigdmr, genebody, main="eDMR genebody annotation", xlab="DMR count")
 
 # get CpG islands and shores annotation
 cpgi=cpgi.anno(file="http://edmr.googlecode.com/files/hg19_cpgisland_all.bed")
 
 # plot the eDMR CpG islands and shores annotation
-plot.dmr.distr(myDMR.sig, cpgi, main="eDMR CpG islands and shores annotation", xlab="DMR count")
+plot.dmr.distr(mysigdmr, cpgi, main="eDMR CpG islands and shores annotation", xlab="DMR count")
 
 # prepare genes for pathway analysis with significant DMRs at its promoter regions 
-dmr.genes=get.dmr.genes(myDMR=myDMR.sig, subject=genebody$promoter, id.type="gene.symbol")
+dmr.genes=get.dmr.genes(myDMR=mysigdmr, subject=genebody$promoter, id.type="gene.symbol")
 ```
