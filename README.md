@@ -29,7 +29,7 @@ library(methylKit)
 library(GenomicRanges)
 library(mixtools)
 library(data.table)
-data(example.myDiff.2013Nov6)
+data(edmr)
 ```
 
 Step 2. myDiff evalution and plotting

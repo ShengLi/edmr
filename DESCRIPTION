@@ -7,10 +7,10 @@ Description: Comprehensive DMR analysis based on bimodal normal distribution
   distribution of CpGs into account for the enrichment DNA methylation sequencing 
   data so as to optimize the definition of the empirical regions. Combined with 
   the dependent adjustment for regional p-value combination and DMR annotation. 
-Version: 0.6.1
+Version: 0.6.3
 Authors@R: c(person("Sheng", "Li", role=c("aut","cre"), 
                     email = "shelly1436@gmail.com"))
-Author: Sheng Li
+Author: Sheng Li [cre, aut], Francine E Garrett-Bakelman [ctb], Altuna Akalin [ctb], Paul Zumbo [ctb], Ari Melnick [ctb], Chrsitopher E Mason [ctb]
 Maintainer: Sheng Li <shelly1436@gmail.com>
 Depends: R (>= 3.0.2)
 Imports:
@@ -24,6 +24,7 @@ Suggests:
   data.table,
   mixtools
 License: MIT
+URL: https://github.com/ShengLi/edmr
 LazyData: true
 Collate:
   'ACF.R'
