@@ -34,14 +34,14 @@ data(example.myDiff.2013Nov6)
 Evalution and plot
 ```R
 # fitting the bimodal normal distribution to CpGs distribution
-myMixmdl=myDiff.to.mixmdl(chr22.myDiff)
-
-# plot the fittings
-plotMdl1(myMixmdl, subtitle="example", cex.sub=1.2)
+myMixmdl=myDiff.to.mixmdl(chr22.myDiff, plot=T, main="example")
 
 # plot cost function and the determined distance cutoff
 plotCost(myMixmdl, main="cost function")
 ```
+![alt tag](inst/density.png) 
+![alt tag](inst/cost.png)
+
 
 Calculate DMRs
 ```R
@@ -68,3 +68,5 @@ plot.dmr.distr(mysigdmr, cpgi, main="eDMR CpG islands and shores annotation", xl
 dmr.genes=get.dmr.genes(myDMR=mysigdmr, subject=genebody$promoter, id.type="gene.symbol")
 dmr.genes
 ```
+![alt tag](inst/genebody.png) 
+![alt tag](inst/cpgisland.png)
