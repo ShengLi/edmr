@@ -1,8 +1,8 @@
 Package: edmr
 Type: Package
 Title: Empirical differentially methylated regions calculation
-Description: Comprehensive DMR analysis based on bimodal normal distribution 
-  model and weighted cost function for regional methylation analysis optimization. 
+Description: Optimized DMR analysis based on bimodal normal distribution 
+  model and cost function for regional methylation analysis optimization. 
   It captures the regional methylation modification by taking the spatial 
   distribution of CpGs into account for the enrichment DNA methylation sequencing 
   data so as to optimize the definition of the empirical regions. Combined with 
