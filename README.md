@@ -21,7 +21,8 @@ install_github("edmr", username = "ShengLi",build_vignettes=FALSE)
 
 Usage
 ---------
-Load add-on packages and example data
+Step 1. Load add-on packages and example data
+
 ```R
 library(edmr)
 library(methylKit)
@@ -31,7 +32,8 @@ library(data.table)
 data(example.myDiff.2013Nov6)
 ```
 
-Evalution and plot
+Step 2. myDiff evalution and plotting
+
 ```R
 # fitting the bimodal normal distribution to CpGs distribution
 myMixmdl=myDiff.to.mixmdl(chr22.myDiff, plot=T, main="example")
@@ -43,7 +45,8 @@ plotCost(myMixmdl, main="cost function")
 ![alt tag](inst/cost.png)
 
 
-Calculate DMRs
+Step 3. Calculate DMRs
+
 ```R
 # calculate all DMRs candidate
 mydmr=edmr(chr22.myDiff, mode=1, ACF=TRUE)
