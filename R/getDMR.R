@@ -99,8 +99,6 @@ getDMR=function(peaks, allMyDiff, pcutoff=0.1,step=100, DMC.qvalue=0.01, DMC.met
 
 
 getDMR2=function(peaks, allMyDiff, pcutoff=0.1,step=100, DMC.qvalue=0.01, DMC.methdiff=25, num.DMCs=1, num.CpGs=3, DMR.methdiff=20, ACF){
-  library(GenomicRanges,quietly =TRUE)
-  library(data.table,quietly =TRUE)
   myDiff=allMyDiff[allMyDiff$ppvalue<=pcutoff,]
   # in cases where there are many pvalues equal to zero 
   min.pval=min(9e-16,myDiff$ppvalue[myDiff$ppvalue!=0])
