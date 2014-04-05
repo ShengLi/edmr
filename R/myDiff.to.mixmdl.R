@@ -1,7 +1,5 @@
 # inner function 1
 get.dist.myDiff <- function(myDiff){
-  #library(doMC, quietly=T)
-  #registerDoMC(cores=cores)
   x=myDiff
   chr.list=unique(as.character(x$chr))
   chr.list=chr.list[chr.list!="chrM"]
@@ -15,7 +13,6 @@ get.dist.myDiff <- function(myDiff){
 #' @importFrom mixtools normalmixEM
 dist_to_mixmdl <- function(dist)
 {
-  library(mixtools,quietly=T)
   log2.distance=log2(dist[dist!=1])
   mixmdl=normalmixEM(log2.distance)
 }
@@ -32,7 +29,7 @@ dist_to_mixmdl <- function(dist)
 #' 
 #' myMixmdl=myDiff.to.mixmdl(chr22.myDiff)
 myDiff.to.mixmdl=function(myDiff,plot=F, main=""){
-  dist=get.dist.myDiff(myDiff)
+  dist=get.dist.myDiff(as.data.frame(myDiff))
   mixmdl=dist_to_mixmdl(dist)
   if(plot){
     plotMdl1(mixmdl,main)

@@ -35,6 +35,7 @@
 #' mydmr4=edmr(chr22.myDiff, mode=2, ACF=FALSE)
 
 edmr=function(myDiff, step=100, dist="none", DMC.qvalue=0.01, DMC.methdiff=25, num.DMCs=1, num.CpGs=3, DMR.methdiff=20, plot=FALSE, main="", mode=1, ACF=TRUE, fuzzypval=1){
+  myDiff=as.data.frame(myDiff)
   if(mode==1){
     myDMR=eDMR.sub(myDiff, step=step, dist=dist, DMC.qvalue=DMC.qvalue, DMC.methdiff=DMC.methdiff, num.DMCs=num.DMCs, num.CpGs=num.CpGs, 
                    DMR.methdiff=DMR.methdiff, granges=TRUE, plot=plot, main=main, direction="both", ACF=ACF)
