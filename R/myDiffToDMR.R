@@ -1,7 +1,6 @@
 #' calculate differentially methylated regions from \code{myDiff} object.
-#' @importFrom methylKit getData
 myDiffToDMR=function(myDiff, dist=100, step=100, DMC.qvalue=0.01, DMC.methdiff=25, num.DMCs=1, num.CpGs=3, DMR.methdiff=20, ACF=TRUE, fuzzypval=0.1){
-  if (class(myDiff)=="methylDiff") input=getData(myDiff)
+  if (class(myDiff)=="methylDiff") input=data.frame(myDiff)
   else if(class(myDiff)=="data.frame") input=myDiff
   else print("Input object myDiff has too be methylDiff class from methylKit or data.frame class")
   # prepare myDiff for DMR calling
