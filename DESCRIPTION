@@ -15,12 +15,10 @@ Maintainer: Sheng Li <shelly1436@gmail.com>
 Depends: R (>= 3.0.2)
 Imports:
   GenomicRanges,
-  methylKit,
   data.table,
   mixtools
 Suggests:
   GenomicRanges,
-  methylKit,
   data.table,
   mixtools
 License: MIT
