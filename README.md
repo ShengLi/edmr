@@ -30,13 +30,14 @@ library(GenomicRanges)
 library(mixtools)
 library(data.table)
 data(edmr)
+myDiff=data.frame(chr22.myDiff)
 ```
 
 Step 2. myDiff evalution and plotting
 
 ```R
 # fitting the bimodal normal distribution to CpGs distribution
-myMixmdl=myDiff.to.mixmdl(chr22.myDiff, plot=T, main="example")
+myMixmdl=myDiff.to.mixmdl(myDiff, plot=T, main="example")
 
 # plot cost function and the determined distance cutoff
 plotCost(myMixmdl, main="cost function")
@@ -49,7 +50,7 @@ Step 3. Calculate DMRs
 
 ```R
 # calculate all DMRs candidate
-mydmr=edmr(chr22.myDiff, mode=1, ACF=TRUE)
+mydmr=edmr(myDiff, mode=1, ACF=TRUE)
 
 # further filtering the DMRs
 mysigdmr=filter.dmr(mydmr)
