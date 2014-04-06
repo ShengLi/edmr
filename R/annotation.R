@@ -3,6 +3,7 @@
 #' @param bed file for gene models
 #' @importFrom IRanges IRanges
 #' @examples
+#' library(IRanges)
 #' genebody=genebody.anno(file="http://edmr.googlecode.com/files/hg19_refseq_all_types.bed")
 genebody.anno=function(file){
   print(paste("load", file))
@@ -24,6 +25,7 @@ genebody.anno=function(file){
 #' @export
 #' @param bed file for CpG islands
 #' @importFrom IRanges IRanges,flank,reduce
+#' @importFrom GenomicRanges GRanges
 #' @examples
 #' library(GenomicRanges)
 #' library(IRanges)
@@ -45,6 +47,8 @@ cpgi.anno=function(file, shore.width=2000, shelf.width=2000){
 #' @export
 #' @param myDMR DMRs predicted by \code{edmr}.
 #' @param GRanges list used to annotate DMRs.
+#' @importFrom IRanges findOverlaps
+#' @importFrom GenomicRanges GRanges
 plot.dmr.distr=function(myDMR, subject, ...){
   # countOverlapDMRs
   countOverlapDMRs=function(dmr,anno){
@@ -69,6 +73,7 @@ plot.dmr.distr=function(myDMR, subject, ...){
 #' @param myDMR DMRs predicted by \code{edmr}.
 #' @param subject GRanges used to annotate DMRs. For example, genebody$promoter will annotate the DMRs using promoters
 #' @param id.type the column names that will be used to annotate the DMR. default: "gene.symbol"
+#' @importFrom IRanges findOverlaps
 get.dmr.genes=function(myDMR, subject, id.type="gene.symbol"){
   ind=findOverlaps(subject,myDMR)
   unique(values(subject)[unique(ind@queryHits), id.type])
