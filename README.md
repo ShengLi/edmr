@@ -25,6 +25,7 @@ Step 1. Load add-on packages and example data
 ```R
 library(edmr)
 library(GenomicRanges)
+library(IRanges)
 library(mixtools)
 library(data.table)
 data(edmr)
