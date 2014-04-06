@@ -15,7 +15,6 @@ source("http://bioconductor.org/biocLite.R")
 biocLite(c("GenomicRanges","IRanges"))
 # install from github
 library(devtools)
-install_github("methylKit", username = "al2na",build_vignettes=FALSE)
 install_github("edmr", username = "ShengLi",build_vignettes=FALSE)
 ```
 
@@ -25,12 +24,10 @@ Step 1. Load add-on packages and example data
 
 ```R
 library(edmr)
-library(methylKit)
 library(GenomicRanges)
 library(mixtools)
 library(data.table)
 data(edmr)
-myDiff=data.frame(chr22.myDiff)
 ```
 
 Step 2. myDiff evalution and plotting
