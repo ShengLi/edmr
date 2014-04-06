@@ -55,13 +55,15 @@ mysigdmr=filter.dmr(mydmr)
 
 ## annotation
 # get genebody annotation GRangesList object
-genebody=genebody.anno(file="http://edmr.googlecode.com/files/hg19_refseq_all_types.bed")
+genebody.file=system.file("extdata", "hg19_refseq_all_types.bed.gz", package = "edmr")
+genebody=genebody.anno(file=genebody.file)
 
 # plot the eDMR genebody annotation
 plot.dmr.distr(mysigdmr, genebody, main="eDMR genebody annotation", xlab="DMR count")
 
 # get CpG islands and shores annotation
-cpgi=cpgi.anno(file="http://edmr.googlecode.com/files/hg19_cpgisland_all.bed")
+cpgi.file=system.file("extdata", "hg19_cpgisland_all.bed.gz", package = "edmr")
+cpgi=cpgi.anno(file=cpgi.file)
 
 # plot the eDMR CpG islands and shores annotation
 plot.dmr.distr(mysigdmr, cpgi, main="eDMR CpG islands and shores annotation", xlab="DMR count")
