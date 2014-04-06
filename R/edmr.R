@@ -23,16 +23,16 @@
 #' @return \code{GRanges}
 #' @export
 #' @examples
-#' library(methylKit)
 #' library(GenomicRanges)
+#' library(IRanges)
 #' library(mixtools)
 #' library(data.table)
 #' data(edmr)
-#' mydmr=edmr(chr22.myDiff, mode=1, ACF=TRUE)
+#' mydmr=edmr(myDiff, mode=1, ACF=TRUE)
 #' mysigdmr=filter.dmr(mydmr)
-#' mydmr2=edmr(chr22.myDiff, mode=2, ACF=TRUE)
-#' mydmr3=edmr(chr22.myDiff, mode=1, ACF=FALSE)
-#' mydmr4=edmr(chr22.myDiff, mode=2, ACF=FALSE)
+#' mydmr2=edmr(myDiff, mode=2, ACF=TRUE)
+#' mydmr3=edmr(myDiff, mode=1, ACF=FALSE)
+#' mydmr4=edmr(myDiff, mode=2, ACF=FALSE)
 
 edmr=function(myDiff, step=100, dist="none", DMC.qvalue=0.01, DMC.methdiff=25, num.DMCs=1, num.CpGs=3, DMR.methdiff=20, plot=FALSE, main="", mode=1, ACF=TRUE, fuzzypval=1){
   myDiff=as.data.frame(myDiff)
