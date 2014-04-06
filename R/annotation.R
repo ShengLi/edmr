@@ -76,7 +76,7 @@ plot.dmr.distr=function(myDMR, subject, ...){
 #' get gene list based the genebody granges
 #' @export
 #' @param myDMR DMRs predicted by \code{edmr}.
-#' @param subject GRanges used to annotate DMRs. For example, genebody$promoter will annotate the DMRs using promoters
+#' @param subject GRanges used to annotate DMRs. For example, use promoter in genebody will annotate the DMRs using promoters
 #' @param id.type the column names that will be used to annotate the DMR. default: "gene.symbol"
 #' @importFrom IRanges findOverlaps
 get.dmr.genes=function(myDMR, subject, id.type="gene.symbol"){
