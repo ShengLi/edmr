@@ -7,7 +7,7 @@
 #' sequencing data so as to optimize the definition of the empirical regions. 
 #' Combined with the dependent adjustment for regional p-value combination.
 #' 
-#' @param myDiff a \code{myDiff} object from \code{methylKit} package. Required.
+#' @param myDiff a \code{data.frame} object created by calculateDiffMeth from methylKit package and converted into data.frame. Required.
 #' @param step a numeric variable for calculating auto-correlation, default: 100.
 #' @param dist distance cutoff to call a gap for DMR, default: "none", which will be automatically determined by the bimodal normal distribution, default: 100.
 #' @param DMC.qvalue qvalue cutoff for DMC definition, default: 0.01

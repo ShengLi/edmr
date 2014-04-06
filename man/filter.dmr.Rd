@@ -24,7 +24,7 @@ filter.dmr(myDMR, DMR.qvalue = 0.001, mean.meth.diff = 20, num.CpGs = 5,
 significant DMRs
 }
 \examples{
-library(methylKit)
+library(IRanges)
 library(GenomicRanges)
 library(mixtools)
 library(data.table)

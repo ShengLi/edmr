@@ -5,8 +5,9 @@
 myDiff.to.mixmdl(myDiff, plot = F, main = "")
 }
 \arguments{
-  \item{myDiff}{a \code{myDiff} object from
-  \code{methylKit} package. Required.}
+  \item{myDiff}{a \code{data.frame} object created by
+  calculateDiffMeth from methylKit package and converted
+  into data.frame. Required.}
 
   \item{plot}{to plot or not the nearest distance
   distribution.}

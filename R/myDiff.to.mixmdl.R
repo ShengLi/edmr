@@ -19,7 +19,7 @@ dist_to_mixmdl <- function(dist)
 
 #' obtain mixtools model from \code{myDiff} object
 #' @export
-#' @param myDiff a \code{myDiff} object from \code{methylKit} package. Required.
+#' @param myDiff a \code{data.frame} object created by calculateDiffMeth from methylKit package and converted into data.frame. Required.
 #' @param plot to plot or not the nearest distance distribution.
 #' @param main title of the plot
 #' @examples

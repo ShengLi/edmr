@@ -6,7 +6,7 @@
 #' @param num.CpGs cutoff of the number DMCs in each region to call DMR, default: 5
 #' @param num.DMCs cutoff of the number of CpGs, default: 3
 #' @examples
-#' library(methylKit)
+#' library(IRanges)
 #' library(GenomicRanges)
 #' library(mixtools)
 #' library(data.table)

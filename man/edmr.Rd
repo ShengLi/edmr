@@ -7,8 +7,9 @@ edmr(myDiff, step = 100, dist = "none", DMC.qvalue = 0.01,
   plot = FALSE, main = "", mode = 1, ACF = TRUE, fuzzypval = 1)
 }
 \arguments{
-  \item{myDiff}{a \code{myDiff} object from
-  \code{methylKit} package. Required.}
+  \item{myDiff}{a \code{data.frame} object created by
+  calculateDiffMeth from methylKit package and converted
+  into data.frame. Required.}
 
   \item{step}{a numeric variable for calculating
   auto-correlation, default: 100.}
