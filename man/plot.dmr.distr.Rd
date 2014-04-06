@@ -8,6 +8,9 @@
   \item{myDMR}{DMRs predicted by \code{edmr}.}
 
   \item{GRanges}{list used to annotate DMRs.}
+
+  \item{...}{Argument to be passed to \code{barplot}
+  function.}
 }
 \description{
 plot eDMR distribution over the subject genomic ranges

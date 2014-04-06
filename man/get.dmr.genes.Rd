@@ -8,8 +8,8 @@ get.dmr.genes(myDMR, subject, id.type = "gene.symbol")
   \item{myDMR}{DMRs predicted by \code{edmr}.}
 
   \item{subject}{GRanges used to annotate DMRs. For
-  example, genebody$promoter will annotate the DMRs using
-  promoters}
+  example, use promoter in genebody will annotate the DMRs
+  using promoters}
 
   \item{id.type}{the column names that will be used to
   annotate the DMR. default: "gene.symbol"}

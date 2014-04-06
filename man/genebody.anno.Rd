@@ -5,12 +5,14 @@
 genebody.anno(file)
 }
 \arguments{
-  \item{bed}{file for gene models}
+  \item{file}{bed file for gene models}
 }
 \description{
 generate genebody GRangesList object
 }
 \examples{
-genebody=genebody.anno(file="http://edmr.googlecode.com/files/hg19_refseq_all_types.bed")
+library(IRanges)
+genebody.file=system.file("extdata", "hg19_refseq_all_types.bed.gz", package = "edmr")
+genebody=genebody.anno(file=genebody.file)
 }
 

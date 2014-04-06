@@ -5,7 +5,11 @@
 cpgi.anno(file, shore.width = 2000, shelf.width = 2000)
 }
 \arguments{
-  \item{bed}{file for CpG islands}
+  \item{file}{bed file for CpG islands}
+
+  \item{shore.width}{width for CpG shores}
+
+  \item{shelf.width}{width for CpG shelves}
 }
 \description{
 generate CpG islands GRangesList object
@@ -13,6 +17,7 @@ generate CpG islands GRangesList object
 \examples{
 library(GenomicRanges)
 library(IRanges)
-cpgi=cpgi.anno(file="http://edmr.googlecode.com/files/hg19_cpgisland_all.bed")
+cpgi.file=system.file("extdata", "hg19_cpgisland_all.bed.gz", package = "edmr")
+cpgi=cpgi.anno(file=cpgi.file)
 }
 
