@@ -18,11 +18,6 @@ Imports:
   IRanges,
   data.table,
   mixtools
-Suggests:
-  GenomicRanges,
-  IRanges,
-  data.table,
-  mixtools
 License: MIT
 URL: https://github.com/ShengLi/edmr
 LazyData: true
@@ -40,3 +35,4 @@ Collate:
   'plotMdl1.R'
   'filter.dmr.R'
   'annotation.R'
+  'document_data.R'
