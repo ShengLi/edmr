@@ -17,7 +17,7 @@ generate CpG islands GRangesList object
 \examples{
 library(GenomicRanges)
 library(IRanges)
-cpgi.file=system.file("extdata", "hg19_cpgisland_all.bed.gz", package = "edmr")
+cpgi.file=system.file("extdata", "chr22.hg19_cpgisland_all.bed.gz", package = "edmr")
 cpgi=cpgi.anno(file=cpgi.file)
 }
 

@@ -12,7 +12,7 @@ generate genebody GRangesList object
 }
 \examples{
 library(IRanges)
-genebody.file=system.file("extdata", "hg19_refseq_all_types.bed.gz", package = "edmr")
+genebody.file=system.file("extdata", "chr22.hg19_refseq_all_types.bed.gz", package = "edmr")
 genebody=genebody.anno(file=genebody.file)
 }
 
