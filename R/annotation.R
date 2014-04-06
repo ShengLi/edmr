@@ -4,7 +4,8 @@
 #' @importFrom IRanges IRanges
 #' @examples
 #' library(IRanges)
-#' genebody=genebody.anno(file="http://edmr.googlecode.com/files/hg19_refseq_all_types.bed")
+#' genebody.file=system.file("extdata", "hg19_refseq_all_types.bed.gz", package = "edmr")
+#' genebody=genebody.anno(file=genebody.file)
 genebody.anno=function(file){
   print(paste("load", file))
   genes.obj=readTableFast(file,header=F, sep="\t",stringsAsFactors=F)
@@ -29,7 +30,8 @@ genebody.anno=function(file){
 #' @examples
 #' library(GenomicRanges)
 #' library(IRanges)
-#' cpgi=cpgi.anno(file="http://edmr.googlecode.com/files/hg19_cpgisland_all.bed")
+#' cpgi.file=system.file("extdata", "hg19_cpgisland_all.bed.gz", package = "edmr")
+#' cpgi=cpgi.anno(file=cpgi.file)
 cpgi.anno=function(file, shore.width=2000, shelf.width=2000){
   ft=readTableFast(file, header=F, sep="\t")
   cpgi.gr= with(ft, GRanges(ft[,1], IRanges(ft[,2], ft[,3])))
