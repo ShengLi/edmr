@@ -11,7 +11,7 @@
 #' library(mixtools)
 #' library(data.table)
 #' data(edmr)
-#' mydmr=edmr(chr22.myDiff, mode=1, ACF=TRUE)
+#' mydmr=edmr(myDiff, mode=1, ACF=TRUE)
 #' mysigdmr=filter.dmr(mydmr)
 
 filter.dmr=function(myDMR, DMR.qvalue=0.001, mean.meth.diff=20, num.CpGs=5, num.DMCs=3){

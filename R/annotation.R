@@ -50,12 +50,12 @@ cpgi.anno=function(file, shore.width=2000, shelf.width=2000){
 
 
 #' plot eDMR distribution over the subject genomic ranges
-#' @export
 #' @param myDMR DMRs predicted by \code{edmr}.
 #' @param GRanges list used to annotate DMRs.
 #' @param ... Argument to be passed to \code{barplot} function.
 #' @importFrom IRanges findOverlaps
 #' @importFrom GenomicRanges GRanges
+#' @export
 plot.dmr.distr=function(myDMR, subject, ...){
   # countOverlapDMRs
   countOverlapDMRs=function(dmr,anno){

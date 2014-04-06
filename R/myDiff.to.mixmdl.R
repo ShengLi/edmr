@@ -27,7 +27,7 @@ dist_to_mixmdl <- function(dist)
 #' library(mixtools)
 #' data(edmr)
 #' 
-#' myMixmdl=myDiff.to.mixmdl(chr22.myDiff)
+#' myMixmdl=myDiff.to.mixmdl(myDiff)
 myDiff.to.mixmdl=function(myDiff,plot=F, main=""){
   dist=get.dist.myDiff(as.data.frame(myDiff))
   mixmdl=dist_to_mixmdl(dist)

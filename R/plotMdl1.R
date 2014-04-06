@@ -8,7 +8,7 @@
 #' library(mixtools)
 #' data(edmr)
 #' 
-#' myMixmdl=myDiff.to.mixmdl(chr22.myDiff)
+#' myMixmdl=myDiff.to.mixmdl(myDiff)
 #' plotMdl1(myMixmdl, subtitle="example", cex.sub=1.2)
 
 plotMdl1=function(mixmdl, subtitle="", cex.sub=1,...){
