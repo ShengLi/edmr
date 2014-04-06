@@ -1,6 +1,6 @@
 #' generate genebody GRangesList object
 #' @export
-#' @param bed file for gene models
+#' @param file bed file for gene models
 #' @importFrom IRanges IRanges
 #' @examples
 #' library(IRanges)
@@ -24,7 +24,9 @@ genebody.anno=function(file){
 
 #' generate CpG islands GRangesList object
 #' @export
-#' @param bed file for CpG islands
+#' @param file bed file for CpG islands
+#' @param shore.width width for CpG shores
+#' @param shelf.width width for CpG shelves
 #' @importFrom IRanges IRanges,flank,reduce
 #' @importFrom GenomicRanges GRanges
 #' @examples
@@ -49,6 +51,7 @@ cpgi.anno=function(file, shore.width=2000, shelf.width=2000){
 #' @export
 #' @param myDMR DMRs predicted by \code{edmr}.
 #' @param GRanges list used to annotate DMRs.
+#' @param ... Argument to be passed to \code{barplot} function.
 #' @importFrom IRanges findOverlaps
 #' @importFrom GenomicRanges GRanges
 plot.dmr.distr=function(myDMR, subject, ...){
@@ -58,7 +61,7 @@ plot.dmr.distr=function(myDMR, subject, ...){
     unique(x@queryHits)
   }
   col.list=c("#E41A1C","#377EB8","#984EA3","#4DAF4A","#FF7F00","#FFFF33", "#A65628", "#8DD3C7"  )
-  #int=lapply(subject, function(x)intersect(myDMR,x))
+  #int=lapply(subject, function(x)intersect(myDMR,x))G
   int=lapply(subject, function(x)countOverlapDMRs(myDMR,x))
   res0=sapply(int, length)
   int.gr=GRanges();for(i in length(int)) {int.gr=append(int.gr,int[[i]])}
