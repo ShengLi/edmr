@@ -1,6 +1,7 @@
 #' generate genebody GRangesList object
 #' @export
 #' @param bed file for gene models
+#' @importFrom IRanges IRanges
 #' @examples
 #' genebody=genebody.anno(file="http://edmr.googlecode.com/files/hg19_refseq_all_types.bed")
 genebody.anno=function(file){
@@ -22,6 +23,7 @@ genebody.anno=function(file){
 #' generate CpG islands GRangesList object
 #' @export
 #' @param bed file for CpG islands
+#' @importFrom IRanges IRanges
 #' @examples
 #' cpgi=cpgi.anno(file="http://edmr.googlecode.com/files/hg19_cpgisland_all.bed")
 cpgi.anno=function(file, shore.width=2000, shelf.width=2000){
