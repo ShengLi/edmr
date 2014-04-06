@@ -97,28 +97,3 @@ getDMR=function(peaks, allMyDiff, pcutoff=0.1,step=100, DMC.qvalue=0.01, DMC.met
   res
 }
 
-
-getDMR2=function(peaks, allMyDiff, pcutoff=0.1,step=100, DMC.qvalue=0.01, DMC.methdiff=25, num.DMCs=1, num.CpGs=3, DMR.methdiff=20, ACF){
-  myDiff=allMyDiff[allMyDiff$ppvalue<=pcutoff,]
-  # in cases where there are many pvalues equal to zero 
-  min.pval=min(9e-16,myDiff$ppvalue[myDiff$ppvalue!=0])
-  min.qval=min(9e-16,myDiff$pqvalue[myDiff$pqvalue!=0])
-  myDiff$ppvalue[myDiff$ppvalue==0]=min.pval
-  myDiff$pqvalue[myDiff$pqvalue==0]=min.qval  
-  myDiff.gr=GRanges(seqnames=Rle(myDiff$pchr), IRanges(start=as.integer(myDiff$pstart), end=as.integer(myDiff$pend)), strand=myDiff$pstrand, pval=myDiff$ppvalue, padj=myDiff$pqvalue, methDiff=myDiff$pmethdiff)
-  peaks.gr=GRanges(seqnames=Rle(peaks$rchr), IRanges(start=as.integer(peaks$rstart), end=as.integer(peaks$rend)))
-  if(ACF){
-    maxdist=max(width(peaks.gr))
-    print(paste("auto correlation calculation. step:", step, "dist:", maxdist))
-    acf=ACF(maxdist,step, allMyDiff)    
-    res.pk.myD=regions.property(myDiff.gr,peaks.gr, DMC.qvalue, DMC.methdiff, ACF, acf)
-  } else {
-    res.pk.myD=regions.property(myDiff.gr,peaks.gr, DMC.qvalue, DMC.methdiff, ACF, NULL)
-  }
-  r.sl.padj=p.adjust(res.pk.myD$r.sl.pval,'fdr')
-  r.sl.qadj=p.adjust(res.pk.myD$r.sl.qval,'fdr')
-  DMR=cbind(res.pk.myD, r.sl.qadj, r.sl.padj)
-  res=as.data.frame(DMR)
-  colnames(res)=c("chr","start","end","median.meth.diff","mean.meth.diff","num.CpGs","num.DMCs","meth.diffs","pvalues","DMR.q.pvalue","DMR.p.pvalue","DMR.q.qvalue","DMR.p.qvalue")
-  res
-}
