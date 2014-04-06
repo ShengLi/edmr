@@ -21,7 +21,7 @@ library(edmr)
 library(mixtools)
 data(edmr)
 
-myMixmdl=myDiff.to.mixmdl(chr22.myDiff)
+myMixmdl=myDiff.to.mixmdl(myDiff)
 plotMdl1(myMixmdl, subtitle="example", cex.sub=1.2)
 }
 

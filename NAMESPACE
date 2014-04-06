@@ -1,4 +1,4 @@
-export(plot.dmr.distr)
+S3method(plot,dmr.distr)
 export(cpgi.anno)
 export(edmr)
 export(filter.dmr)

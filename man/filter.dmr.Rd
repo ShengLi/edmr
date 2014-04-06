@@ -29,7 +29,7 @@ library(GenomicRanges)
 library(mixtools)
 library(data.table)
 data(edmr)
-mydmr=edmr(chr22.myDiff, mode=1, ACF=TRUE)
+mydmr=edmr(myDiff, mode=1, ACF=TRUE)
 mysigdmr=filter.dmr(mydmr)
 }
 

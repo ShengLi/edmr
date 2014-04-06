@@ -19,7 +19,7 @@ library(edmr)
 library(mixtools)
 data(edmr)
 
-myMixmdl=myDiff.to.mixmdl(chr22.myDiff)
+myMixmdl=myDiff.to.mixmdl(myDiff)
 plotCost(myMixmdl, main="cost function")
 }
 
