@@ -11,6 +11,8 @@ cpgi.anno(file, shore.width = 2000, shelf.width = 2000)
 generate CpG islands GRangesList object
 }
 \examples{
+library(GenomicRanges)
+library(IRanges)
 cpgi=cpgi.anno(file="http://edmr.googlecode.com/files/hg19_cpgisland_all.bed")
 }
 

@@ -23,8 +23,10 @@ genebody.anno=function(file){
 #' generate CpG islands GRangesList object
 #' @export
 #' @param bed file for CpG islands
-#' @importFrom IRanges IRanges
+#' @importFrom IRanges IRanges,flank,reduce
 #' @examples
+#' library(GenomicRanges)
+#' library(IRanges)
 #' cpgi=cpgi.anno(file="http://edmr.googlecode.com/files/hg19_cpgisland_all.bed")
 cpgi.anno=function(file, shore.width=2000, shelf.width=2000){
   ft=readTableFast(file, header=F, sep="\t")
@@ -65,7 +67,7 @@ plot.dmr.distr=function(myDMR, subject, ...){
 #' get gene list based the genebody granges
 #' @export
 #' @param myDMR DMRs predicted by \code{edmr}.
-#' @param subject GRanges used to annotate DMRs. For example, genebody@promoter will annotate the DMRs using promoters
+#' @param subject GRanges used to annotate DMRs. For example, genebody$promoter will annotate the DMRs using promoters
 #' @param id.type the column names that will be used to annotate the DMR. default: "gene.symbol"
 get.dmr.genes=function(myDMR, subject, id.type="gene.symbol"){
   ind=findOverlaps(subject,myDMR)
