@@ -27,7 +27,9 @@ genebody.anno=function(file){
 #' @param file bed file for CpG islands
 #' @param shore.width width for CpG shores
 #' @param shelf.width width for CpG shelves
-#' @importFrom IRanges IRanges,flank,reduce
+#' @importFrom IRanges IRanges
+#' @importFrom IRanges flank
+#' @importFrom IRanges reduce
 #' @importFrom GenomicRanges GRanges
 #' @examples
 #' library(GenomicRanges)
