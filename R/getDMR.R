@@ -1,9 +1,12 @@
 #' Stouffer test
-#' @export
+#' @param x p-values.
 stouffer=function(x)pnorm(sum(qnorm(x))/sqrt(length(x))) 
 
 #' Stoffer Liptak test
-#' @export
+#' @param pvals p-values.
+#' @param end myDiff \code{end} column.
+#' @param acf output object from ACF function.
+#' @param step base pairs in each step of auto-correlation calculation.
 stouffer.liptak=function(pvals,end,acf=acf, step=100){
   n=length(pvals)
   if(n>1){
@@ -25,7 +28,6 @@ stouffer.liptak=function(pvals,end,acf=acf, step=100){
   }
 }
 #' Calculate the p-value for the differentially methylated regions (ACF=TRUE)
-#' @export
 #' @importFrom data.table data.table
 #' @importFrom GenomicRanges GRanges
 #' @importFrom GenomicRanges findOverlaps
