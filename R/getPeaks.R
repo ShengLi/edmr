@@ -1,4 +1,4 @@
-#' Calculate emprical raw regions from \code{myDiff} object.
+# Calculate emprical raw regions from \code{myDiff} object.
 getPeaks=function(allMyDiff, pcutoff=0.1, dist=100){
   print("raw myDiff:")
   print(dim(allMyDiff))

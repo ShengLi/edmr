@@ -1,4 +1,4 @@
-#' calculate differentially methylated regions from \code{myDiff} object.
+# calculate differentially methylated regions from \code{myDiff} object.
 myDiffToDMR=function(myDiff, dist=100, step=100, DMC.qvalue=0.01, DMC.methdiff=25, num.DMCs=1, num.CpGs=3, DMR.methdiff=20, ACF=TRUE, fuzzypval=0.1){
   if (class(myDiff)=="methylDiff") input=data.frame(myDiff)
   else if(class(myDiff)=="data.frame") input=myDiff

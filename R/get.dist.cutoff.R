@@ -1,5 +1,5 @@
 # inner function 1
-#' get break point to minimize the cost function.
+# get break point to minimize the cost function.
 get.break_point=function(mixmdl, itv=range(mixmdl$mu)){
   if(mixmdl$mu[1] < mixmdl$mu[2]) {
     i=1;k=2
@@ -16,7 +16,7 @@ get.break_point=function(mixmdl, itv=range(mixmdl$mu)){
   )$minimum
   break_point
 }
-#' get distance cutoff from \code{mixtools} object
+# get distance cutoff from \code{mixtools} object
 get.dist.cutoff <- function(mixmdl){
   dist=round(2^get.break_point(mixmdl))
   dist

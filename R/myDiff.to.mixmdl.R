@@ -9,8 +9,8 @@ get.dist.myDiff <- function(myDiff){
   y
 }
 
-#' Distance to mixmdl
-#' @importFrom mixtools normalmixEM
+# Distance to mixmdl
+# @importFrom mixtools normalmixEM
 dist_to_mixmdl <- function(dist)
 {
   log2.distance=log2(dist[dist!=1])
@@ -22,12 +22,15 @@ dist_to_mixmdl <- function(dist)
 #' @param myDiff a \code{data.frame} object created by calculateDiffMeth from methylKit package and converted into data.frame. Required.
 #' @param plot to plot or not the nearest distance distribution.
 #' @param main title of the plot
+#' @importFrom mixtools normalmixEM
 #' @examples
 #' library(edmr)
 #' library(mixtools)
 #' data(edmr)
 #' 
-#' myMixmdl=myDiff.to.mixmdl(myDiff)
+#' myMixmdl=myDiff.to.mixmdl(myDiff[1:5000,])
+#' plotMdl1(myMixmdl, subtitle="example", cex.sub=1.2)
+#' plotCost(myMixmdl, main="cost function")
 myDiff.to.mixmdl=function(myDiff,plot=F, main=""){
   dist=get.dist.myDiff(as.data.frame(myDiff))
   mixmdl=dist_to_mixmdl(dist)

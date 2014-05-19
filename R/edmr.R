@@ -20,6 +20,11 @@
 #' @param mode the mode of call DMRs. 1: using all CpGs together. 2: use unidirectional CpGs to call DMRs. default: 1.
 #' @param ACF p-value combination test with (TRUE, default) or without (FALSE) dependency adjustment. 
 #' @param fuzzypval p-value cutoff for raw regions definition.
+#' @importFrom data.table data.table
+#' @importFrom GenomicRanges GRanges
+#' @importFrom GenomicRanges findOverlaps
+#' @importFrom IRanges Rle
+#' @importFrom IRanges IRanges
 #' @return \code{GRanges}
 #' @export
 #' @examples
@@ -28,12 +33,8 @@
 #' library(mixtools)
 #' library(data.table)
 #' data(edmr)
-#' mydmr=edmr(myDiff, mode=1, ACF=TRUE)
+#' mydmr=edmr(myDiff[1:5000,], mode=1, ACF=FALSE)
 #' mysigdmr=filter.dmr(mydmr)
-#' mydmr2=edmr(myDiff, mode=2, ACF=TRUE)
-#' mydmr3=edmr(myDiff, mode=1, ACF=FALSE)
-#' mydmr4=edmr(myDiff, mode=2, ACF=FALSE)
-
 edmr=function(myDiff, step=100, dist="none", DMC.qvalue=0.01, DMC.methdiff=25, num.DMCs=1, num.CpGs=3, DMR.methdiff=20, plot=FALSE, main="", mode=1, ACF=TRUE, fuzzypval=1){
   myDiff=as.data.frame(myDiff)
   if(mode==1){

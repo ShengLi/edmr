@@ -1,4 +1,4 @@
-#' Read text file fast by predicting and feeding \code{colClass} object
+# Read text file fast by predicting and feeding \code{colClass} object
 readTableFast<-function(filename,header=T,skip=0,sep="", ...)
 {
   tab5rows <- read.table(filename, header = header,skip=skip,sep=sep, nrows = 100, ...)

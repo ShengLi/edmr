@@ -1,5 +1,4 @@
-#' edmr sub function
-#' @importFrom GenomicRanges GRanges
+# edmr sub function
 eDMR.sub=function(myDiff, step=100, dist="none", DMC.qvalue=0.01, DMC.methdiff=25, num.DMCs=1, num.CpGs=3, DMR.methdiff=20, granges=TRUE, plot=FALSE, main="", direction="both", ACF=TRUE, fuzzypval=0.1){
   if(direction=="both"){
     print("DMR analysis for all detected CpGs...")

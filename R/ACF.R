@@ -13,14 +13,15 @@ getCorr=function(lag.idx,myDiff,i){
   }
   res
 }
-#' Auto correlation function
-#' @importFrom data.table data.table
+# Auto correlation function
+# @importFrom data.table data.table
 ACF=function(dist,step, myDiff){
   probes.dist=myDiff$pend[-1]-myDiff$pend[-nrow(myDiff)]
   
   dist.div=probes.dist/step
   lag.idx=ceiling(dist.div)
   dt=data.table(cbind(dist=1:dist,key=ceiling(1:dist/step)))
+  key <- NULL
   acf.dist=dt[,list(start=min(dist), end=max(dist)), by=key]
   acf.dist$end[nrow(acf.dist)]=acf.dist$start[nrow(acf.dist)]+step-1
 #   dt=data.frame(dist=1:dist,key=ceiling(1:dist/step))

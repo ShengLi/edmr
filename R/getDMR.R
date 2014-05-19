@@ -1,12 +1,12 @@
-#' Stouffer test
-#' @param x p-values.
+# Stouffer test
+# @param x p-values.
 stouffer=function(x)pnorm(sum(qnorm(x))/sqrt(length(x))) 
 
-#' Stoffer Liptak test
-#' @param pvals p-values.
-#' @param end myDiff \code{end} column.
-#' @param acf output object from ACF function.
-#' @param step base pairs in each step of auto-correlation calculation.
+# Stoffer Liptak test
+# @param pvals p-values.
+# @param end myDiff \code{end} column.
+# @param acf output object from ACF function.
+# @param step base pairs in each step of auto-correlation calculation.
 stouffer.liptak=function(pvals,end,acf=acf, step=100){
   n=length(pvals)
   if(n>1){
@@ -27,13 +27,11 @@ stouffer.liptak=function(pvals,end,acf=acf, step=100){
     pvals
   }
 }
-#' Calculate the p-value for the differentially methylated regions (ACF=TRUE)
-#' @importFrom data.table data.table
-#' @importFrom GenomicRanges GRanges
-#' @importFrom GenomicRanges findOverlaps
+# Calculate the p-value for the differentially methylated regions (ACF=TRUE)
 getDMR=function(peaks, allMyDiff, pcutoff=0.1,step=100, DMC.qvalue=0.01, DMC.methdiff=25, num.DMCs=1, num.CpGs=3, DMR.methdiff=20, a=TRUE){
 #  library(GenomicRanges,quietly =TRUE)
 #  library(data.table,quietly =TRUE)
+  pmethdiff <- ppvalue <- pqvalue <- rchr <- rstart <- rend <- pend <- NULL
   myDiff=allMyDiff[allMyDiff$ppvalue<=pcutoff,]
   # in cases where there are many pvalues equal to zero 
   min.pval=min(9e-16,myDiff$ppvalue[myDiff$ppvalue!=0])

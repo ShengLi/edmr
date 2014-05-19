@@ -5,14 +5,15 @@
 #' @param mean.meth.diff cutoff of the DMR mean methylation difference, default=20
 #' @param num.CpGs cutoff of the number DMCs in each region to call DMR, default: 5
 #' @param num.DMCs cutoff of the number of CpGs, default: 3
-#' @examples
-#' library(IRanges)
-#' library(GenomicRanges)
-#' library(mixtools)
-#' library(data.table)
-#' data(edmr)
-#' mydmr=edmr(myDiff, mode=1, ACF=TRUE)
-#' mysigdmr=filter.dmr(mydmr)
+#' @seealso \code{\link{edmr}}
+# @examples
+# library(IRanges)
+# library(GenomicRanges)
+# library(mixtools)
+# library(data.table)
+# data(edmr)
+# mydmr=edmr(myDiff, mode=1, ACF=TRUE)
+# mysigdmr=filter.dmr(mydmr)
 
 filter.dmr=function(myDMR, DMR.qvalue=0.001, mean.meth.diff=20, num.CpGs=5, num.DMCs=3){
   x=myDMR; 
