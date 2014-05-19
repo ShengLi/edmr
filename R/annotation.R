@@ -2,10 +2,9 @@
 #' @export
 #' @param file bed file for gene models
 #' @importFrom IRanges IRanges
-#' @examples
-#' library(IRanges)
-#' genebody.file=system.file("extdata", "hg19_refseq_all_types.bed.gz", package = "edmr")
-#' genebody=genebody.anno(file=genebody.file)
+# \dontrun{library(IRanges)}  
+# \dontrun{genebody.file=system.file("extdata", "chr22.hg19_refseq_all_types.bed.gz", package = "edmr")}
+# \dontrun{genebody=genebody.anno(file=genebody.file)}
 genebody.anno=function(file){
   print(paste("load", file))
   genes.obj=readTableFast(file,header=F, sep="\t",stringsAsFactors=F)
@@ -34,7 +33,7 @@ genebody.anno=function(file){
 #' @examples
 #' library(GenomicRanges)
 #' library(IRanges)
-#' cpgi.file=system.file("extdata", "hg19_cpgisland_all.bed.gz", package = "edmr")
+#' cpgi.file=system.file("extdata", "chr22.hg19_cpgisland_all.bed.gz", package = "edmr")
 #' cpgi=cpgi.anno(file=cpgi.file)
 cpgi.anno=function(file, shore.width=2000, shelf.width=2000){
   ft=readTableFast(file, header=F, sep="\t")
@@ -51,12 +50,11 @@ cpgi.anno=function(file, shore.width=2000, shelf.width=2000){
 
 #' plot eDMR distribution over the subject genomic ranges
 #' @param myDMR DMRs predicted by \code{edmr}.
-#' @param GRanges list used to annotate DMRs.
-#' @param ... Argument to be passed to \code{barplot} function.
+#' @param subject GRanges list used to annotate DMRs.
 #' @importFrom IRanges findOverlaps
 #' @importFrom GenomicRanges GRanges
 #' @export
-plot.dmr.distr=function(myDMR, subject, ...){
+plotdmrdistr=function(myDMR, subject){
   # countOverlapDMRs
   countOverlapDMRs=function(dmr,anno){
     x=findOverlaps(dmr,anno)
@@ -71,7 +69,7 @@ plot.dmr.distr=function(myDMR, subject, ...){
   res0=c(res0, unannotated)
   names(res0)[length(res0)]="un-anno"
   print(res0)
-  barplot(res0, col=col.list[1:length(res0)], las=2, ...)  
+  barplot(res0, col=col.list[1:length(res0)], las=2)  
 }
 
 
@@ -81,6 +79,7 @@ plot.dmr.distr=function(myDMR, subject, ...){
 #' @param subject GRanges used to annotate DMRs. For example, use promoter in genebody will annotate the DMRs using promoters
 #' @param id.type the column names that will be used to annotate the DMR. default: "gene.symbol"
 #' @importFrom IRanges findOverlaps
+#' @importFrom IRanges values
 get.dmr.genes=function(myDMR, subject, id.type="gene.symbol"){
   ind=findOverlaps(subject,myDMR)
   unique(values(subject)[unique(ind@queryHits), id.type])
@@ -89,14 +88,14 @@ get.dmr.genes=function(myDMR, subject, id.type="gene.symbol"){
 #' get hyper-methylated DMRs
 #' @export
 #' @param myDMR DMRs predicted by \code{edmr}.
+#' @importFrom IRanges values
 get.hyper.dmr=function(myDMR){
   myDMR[which(values(myDMR)[,"mean.meth.diff"]>0)]
 }
 #' get hypo-methylated DMRs
 #' @export
 #' @param myDMR DMRs predicted by \code{edmr}.
+#' @importFrom IRanges values
 get.hypo.dmr=function(myDMR){
   myDMR[which(values(myDMR)[,"mean.meth.diff"]<0)]
 }
-
-
