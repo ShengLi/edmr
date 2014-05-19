@@ -60,7 +60,7 @@ genebody.file=system.file("extdata", "chr22.hg19_refseq_all_types.bed.gz", packa
 genebody=genebody.anno(file=genebody.file)
 
 # plot the eDMR genebody annotation
-plot.dmr.distr(mysigdmr, genebody, main="eDMR genebody annotation", xlab="DMR count")
+plotdmrdistr(mysigdmr, genebody, main="eDMR genebody annotation", xlab="DMR count")
 
 # get CpG islands and shores annotation
 #cpgi=cpgi.anno(file="http://edmr.googlecode.com/files/hg19_cpgisland_all.bed")
