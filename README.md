@@ -60,7 +60,7 @@ genebody.file=system.file("extdata", "chr22.hg19_refseq_all_types.bed.gz", packa
 genebody=genebody.anno(file=genebody.file)
 
 # plot the eDMR genebody annotation
-plotdmrdistr(mysigdmr, genebody, main="eDMR genebody annotation", xlab="DMR count")
+plotdmrdistr(mysigdmr, genebody)
 
 # get CpG islands and shores annotation
 #cpgi=cpgi.anno(file="http://edmr.googlecode.com/files/hg19_cpgisland_all.bed")
@@ -68,7 +68,7 @@ cpgi.file=system.file("extdata", "chr22.hg19_cpgisland_all.bed.gz", package = "e
 cpgi=cpgi.anno(file=cpgi.file)
 
 # plot the eDMR CpG islands and shores annotation
-plotdmrdistr(mysigdmr, cpgi, main="eDMR CpG islands and shores annotation", xlab="DMR count")
+plotdmrdistr(mysigdmr, cpgi)
 
 # prepare genes for pathway analysis with significant DMRs at its promoter regions 
 dmr.genes=get.dmr.genes(myDMR=mysigdmr, subject=genebody$promoter, id.type="gene.symbol")
