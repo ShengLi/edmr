@@ -23,13 +23,7 @@ filter.dmr(myDMR, DMR.qvalue = 0.001, mean.meth.diff = 20, num.CpGs = 5,
 \description{
 significant DMRs
 }
-\examples{
-library(IRanges)
-library(GenomicRanges)
-library(mixtools)
-library(data.table)
-data(edmr)
-mydmr=edmr(myDiff, mode=1, ACF=TRUE)
-mysigdmr=filter.dmr(mydmr)
+\seealso{
+\code{\link{edmr}}
 }
 

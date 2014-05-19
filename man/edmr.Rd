@@ -68,10 +68,7 @@ library(IRanges)
 library(mixtools)
 library(data.table)
 data(edmr)
-mydmr=edmr(myDiff, mode=1, ACF=TRUE)
+mydmr=edmr(myDiff[1:5000,], mode=1, ACF=FALSE)
 mysigdmr=filter.dmr(mydmr)
-mydmr2=edmr(myDiff, mode=2, ACF=TRUE)
-mydmr3=edmr(myDiff, mode=1, ACF=FALSE)
-mydmr4=edmr(myDiff, mode=2, ACF=FALSE)
 }
 

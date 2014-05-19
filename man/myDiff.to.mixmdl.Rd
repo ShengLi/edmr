@@ -22,6 +22,8 @@ library(edmr)
 library(mixtools)
 data(edmr)
 
-myMixmdl=myDiff.to.mixmdl(myDiff)
+myMixmdl=myDiff.to.mixmdl(myDiff[1:5000,])
+plotMdl1(myMixmdl, subtitle="example", cex.sub=1.2)
+plotCost(myMixmdl, main="cost function")
 }
 
