@@ -13,7 +13,7 @@ get.dist.myDiff <- function(myDiff){
 # @importFrom mixtools normalmixEM
 dist_to_mixmdl <- function(dist)
 {
-  log2.distance=log2(dist[dist!=1])
+  log2.distance=log2(dist[dist>1])
   mixmdl=normalmixEM(log2.distance)
 }
 
