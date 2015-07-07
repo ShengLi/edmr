@@ -1,4 +1,3 @@
-#S3method(plot,dmr.distr)
 export(plotdmrdistr)
 export(cpgi.anno)
 export(edmr)

@@ -10,6 +10,6 @@ plotdmrdistr(myDMR, subject)
   \item{subject}{GRanges list used to annotate DMRs.}
 }
 \description{
-plot eDMR distribution over the subject genomic ranges
+plot eDMR distribution over the subject genomic ranges. This function has been deprecated.
 }
 
