@@ -49,6 +49,8 @@ cpgi.anno=function(file, shore.width=2000, shelf.width=2000){
 
 
 #' plot eDMR distribution over the subject genomic ranges
+#'
+#' This function has been deprecated. 
 #' @param myDMR DMRs predicted by \code{edmr}.
 #' @param subject GRanges list used to annotate DMRs.
 #' @importFrom IRanges findOverlaps
