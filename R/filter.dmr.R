@@ -3,8 +3,8 @@
 #' @param myDMR a \code{GRanges} object for DMR regions called.
 #' @param DMR.qvalue qvalue cutoff for DMC definition, default: 0.001
 #' @param mean.meth.diff cutoff of the DMR mean methylation difference, default=20
-#' @param num.CpGs cutoff of the number DMCs in each region to call DMR, default: 5
-#' @param num.DMCs cutoff of the number of CpGs, default: 3
+#' @param num.CpGs cutoff of the number CpGs in each region to call DMR, default: 5
+#' @param num.DMCs cutoff of the number of DMCs, default: 3
 #' @seealso \code{\link{edmr}}
 # @examples
 # library(IRanges)
