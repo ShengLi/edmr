@@ -7,7 +7,7 @@ Description: Optimized DMR analysis based on bimodal normal distribution
   distribution of CpGs into account for the enrichment DNA methylation sequencing 
   data so as to optimize the definition of the empirical regions. Combined with 
   the dependent adjustment for regional p-value combination and DMR annotation. 
-Version: 0.6.3.1
+Version: 0.6.4.1
 Authors@R: c(person(given="Sheng", family="Li", role=c("aut","cre", "cph"), email = "shelly1436@gmail.com"),
               person(given="Francine", family="Garrett-Bakelman", role="ctb"),
               person(family="Akalin", given="Altuna", role="ctb"),
@@ -15,7 +15,7 @@ Authors@R: c(person(given="Sheng", family="Li", role=c("aut","cre", "cph"), emai
               person(family="Melnick", given="Ari", role="ctb"),
               person(family="Mason", given="Chris", role=c("ctb","ths")))
 Maintainer: Sheng Li <shelly1436@gmail.com>
-Depends: R (>= 3.2.1)
+Depends: R (>= 3.4.0)
 Imports: GenomicRanges, IRanges, data.table, mixtools, S4Vectors
 License: Artistic-2.0
 URL: https://github.com/ShengLi/edmr
@@ -24,7 +24,7 @@ Collate: 'ACF.R' 'edmr.R' 'eDMR.sub.R' 'get.dist.cutoff.R' 'getDMR.R'
         'getPeaks.R' 'helpers.R' 'myDiff.to.mixmdl.R' 'myDiffToDMR.R'
         'plotCost.R' 'plotMdl1.R' 'filter.dmr.R' 'annotation.R'
         'document_data.R'
-Packaged: 2014-04-07 15:24:10 UTC; shl2018
+Packaged: 2016-05-01 00:38:10 EST; shl2018
 Author: Sheng Li [aut, cre, cph],
   Francine Garrett-Bakelman [ctb],
   Altuna Akalin [ctb],
@@ -33,4 +33,4 @@ Author: Sheng Li [aut, cre, cph],
   Chris Mason [ctb, ths]
 NeedsCompilation: no
 Repository: CRAN
-Date/Publication: 2014-04-10 09:18:01
+Date/Publication: 2016-05-01 
