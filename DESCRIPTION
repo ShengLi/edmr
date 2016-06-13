@@ -15,7 +15,7 @@ Authors@R: c(person(given="Sheng", family="Li", role=c("aut","cre", "cph"), emai
               person(family="Melnick", given="Ari", role="ctb"),
               person(family="Mason", given="Chris", role=c("ctb","ths")))
 Maintainer: Sheng Li <shelly1436@gmail.com>
-Depends: R (>= 3.3.0)
+Depends: R (>= 3.2.0)
 Imports: GenomicRanges, IRanges, data.table, mixtools, S4Vectors
 License: Artistic-2.0
 URL: https://github.com/ShengLi/edmr
