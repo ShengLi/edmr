@@ -42,7 +42,8 @@ getDMR=function(peaks, allMyDiff, pcutoff=0.1,step=100, DMC.qvalue=0.01, DMC.met
   myDiff.gr=GRanges(seqnames=Rle(myDiff$pchr), IRanges(start=as.integer(myDiff$pstart), end=as.integer(myDiff$pend)), strand=myDiff$pstrand, pval=myDiff$ppvalue, padj=myDiff$pqvalue, methDiff=myDiff$pmethdiff)
   peaks.gr=GRanges(seqnames=Rle(peaks$rchr), IRanges(start=as.integer(peaks$rstart), end=as.integer(peaks$rend)))
   overlap.idx=findOverlaps(myDiff.gr, peaks.gr)
-  dt.pk.myD=data.table(cbind(peaks[overlap.idx@to,], myDiff[overlap.idx@from,]))
+  #dt.pk.myD=data.table(cbind(peaks[overlap.idx@to,], myDiff[overlap.idx@from,]))
+  dt.pk.myD=data.table(cbind(peaks[overlap.idx@subjectHits,], myDiff[overlap.idx@queryHits,]))
   #print(head(dt.pk.myD))
   refine.pk.myD=dt.pk.myD[, list(medianmethdiff=median(pmethdiff),
                                 meanmethdiff=mean(pmethdiff),
