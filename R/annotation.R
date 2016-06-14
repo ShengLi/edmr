@@ -58,7 +58,7 @@ plotdmrdistr=function(myDMR, subject){
   # countOverlapDMRs
   countOverlapDMRs=function(dmr,anno){
     x=findOverlaps(dmr,anno)
-    unique(x@from)
+    unique(x@queryHits)
   }
   col.list=c("#E41A1C","#377EB8","#984EA3","#4DAF4A","#FF7F00","#FFFF33", "#A65628", "#8DD3C7"  )
   #int=lapply(subject, function(x)intersect(myDMR,x))G
@@ -82,7 +82,7 @@ plotdmrdistr=function(myDMR, subject){
 #' @importFrom IRanges values
 get.dmr.genes=function(myDMR, subject, id.type="gene.symbol"){
   ind=findOverlaps(subject,myDMR)
-  unique(values(subject)[unique(ind@to), id.type])
+  unique(values(subject)[unique(ind@subjectHits), id.type])
 }
 
 #' get hyper-methylated DMRs
