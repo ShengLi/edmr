@@ -42,7 +42,7 @@ edmr=function(myDiff, step=100, dist="none", DMC.qvalue=0.01, DMC.methdiff=25, n
                    DMR.methdiff=DMR.methdiff, granges=TRUE, plot=plot, main=main, direction="both", ACF=ACF, fuzzypval=fuzzypval)
   } else if (mode==2){
     hyper.myDMR=eDMR.sub(myDiff, step=step, dist=dist, DMC.qvalue=DMC.qvalue, DMC.methdiff=DMC.methdiff, num.DMCs=num.DMCs, num.CpGs=num.CpGs,
-                         DMR.methdiff=DMR.methdiff, granges=TRUE, plot=plot, main=main, direction="hyper", ACF=ACF)
+                         DMR.methdiff=DMR.methdiff, granges=TRUE, plot=plot, main=main, direction="hyper", ACF=ACF, fuzzypval=fuzzypval)
     hypo.myDMR=eDMR.sub(myDiff, step=step, dist=dist, DMC.qvalue=DMC.qvalue, DMC.methdiff=DMC.methdiff, num.DMCs=num.DMCs, num.CpGs=num.CpGs,
                         DMR.methdiff=DMR.methdiff, granges=TRUE, plot=plot, main=main, direction="hypo", ACF=ACF, fuzzypval=fuzzypval)
     myDMR=c(hyper.myDMR, hypo.myDMR)
