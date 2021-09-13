@@ -15,7 +15,7 @@ source("http://bioconductor.org/biocLite.R")
 biocLite(c("GenomicRanges","IRanges"))
 # install from github
 library(devtools)
-install_github("edmr", username = "ShengLi",build_vignettes=FALSE)
+install_github("ShengLi/edmr")
 ```
 
 Usage
